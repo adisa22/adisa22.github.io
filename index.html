@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adisa Olarenwaju Oluwaseun — NLP, evaluation, under-resourced languages</title>
+
+<meta name="description" content="Computer science lecturer and doctoral researcher in natural language processing. Safety evaluation of generated text for languages where learned quality metrics cannot be constructed.">
+<meta name="author" content="Adisa Olarenwaju Oluwaseun">
+
+<!-- Link previews (Slack, WhatsApp, X, LinkedIn) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Adisa Olarenwaju Oluwaseun">
+<meta property="og:description" content="NLP researcher working on safety evaluation of generated text for languages with no learned quality metric. C'Lela, machine translation, online harms.">
+<meta property="og:url" content="https://adisa22.github.io/">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://adisa22.github.io/">
+
+
+<style>
+  :root {
+    --ink:#15171a;
+    --muted:#5f6570;
+    --faint:#8b919b;
+    --line:#e6e8ec;
+    --accent:#1c4f7c;
+    --accent-soft:rgba(28,79,124,0.26);
+    --bg:#fdfdfc;
+    --card:#f6f7f8;
+    --serif: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, Cambria, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink:#e6e8ec; --muted:#a2a9b4; --faint:#7d848f;
+      --line:#2a2e35; --accent:#7fb2dd; --accent-soft:rgba(127,178,221,0.32);
+      --bg:#131519; --card:#1a1d22;
+    }
+  }
+
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body {
+    margin:0;
+    font-family:var(--serif);
+    font-size:18px; line-height:1.68;
+    color:var(--ink); background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .skip {
+    position:absolute; left:-9999px; top:0;
+    background:var(--accent); color:#fff; padding:10px 16px; z-index:10;
+  }
+  .skip:focus { left:8px; top:8px; }
+
+  .wrap { max-width:680px; margin:0 auto; padding:72px 24px 100px; }
+
+  /* ---------- header ---------- */
+  h1 {
+    font-size:2.15rem; font-weight:600; line-height:1.2;
+    margin:0 0 10px; letter-spacing:-0.015em;
+  }
+  .role { font-family:var(--sans); font-size:0.97rem; color:var(--muted); margin:0 0 3px; }
+  .now {
+    font-family:var(--sans); font-size:0.93rem; color:var(--muted);
+    margin:22px 0 0; padding:13px 16px;
+    background:var(--card); border-left:2px solid var(--accent-soft); border-radius:0 4px 4px 0;
+  }
+  .now strong { color:var(--ink); font-weight:600; }
+
+  .links { font-family:var(--sans); font-size:0.94rem; margin:22px 0 0; }
+  .links a { margin-right:20px; display:inline-block; }
+
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-soft); }
+  a:hover, a:focus-visible { border-bottom-color:var(--accent); }
+  a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+
+  /* ---------- sections ---------- */
+  h2 {
+    font-family:var(--sans);
+    font-size:0.76rem; text-transform:uppercase; letter-spacing:0.11em;
+    color:var(--faint); font-weight:600;
+    margin:52px 0 18px; padding-bottom:9px; border-bottom:1px solid var(--line);
+  }
+  h3 {
+    font-size:1.06rem; font-weight:600; margin:0 0 7px; letter-spacing:-0.005em;
+  }
+  p { margin:0 0 18px; }
+  .lead { font-size:1.06rem; }
+
+  .item { margin-bottom:30px; }
+  .item p { margin:0; color:var(--muted); font-size:0.98rem; }
+
+  /* ---------- publications ---------- */
+  ul.pubs { margin:0; padding:0; list-style:none; }
+  ul.pubs li { margin-bottom:24px; }
+  .pub-title { display:block; margin-bottom:3px; }
+  .venue { font-family:var(--sans); font-size:0.9rem; color:var(--muted); }
+  .tag {
+    display:inline-block; font-family:var(--sans);
+    font-size:0.68rem; text-transform:uppercase; letter-spacing:0.07em; font-weight:600;
+    color:var(--accent); border:1px solid var(--accent-soft); border-radius:3px;
+    padding:2px 7px; margin-bottom:6px;
+  }
+  .note { font-family:var(--sans); font-size:0.92rem; color:var(--muted); margin-top:4px; }
+
+  footer {
+    margin-top:64px; padding-top:22px; border-top:1px solid var(--line);
+    font-family:var(--sans); font-size:0.86rem; color:var(--faint);
+  }
+
+  @media (max-width:600px) {
+    body { font-size:17px; }
+    .wrap { padding:44px 20px 68px; }
+    h1 { font-size:1.72rem; }
+    .links a { margin-right:16px; }
+  }
+
+  @media print {
+    body { background:#fff; color:#000; font-size:11pt; }
+    .wrap { max-width:none; padding:0; }
+    a { color:#000; border:0; }
+    a[href^="http"]::after { content:" (" attr(href) ")"; font-size:9pt; color:#555; }
+    .now { background:none; border-left:0; padding:0; }
+    h2 { margin-top:24px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+
+<header>
+  <h1>Adisa Olarenwaju Oluwaseun</h1>
+  <p class="role">Assistant Lecturer, Department of Computing</p>
+  <p class="role">Afe Babalola University, Ado-Ekiti, Nigeria</p>
+  <p class="role">adisaoo@abuad.edu.ng</p>
+
+  <p class="links">
+    <a href="cv.pdf">CV</a><a href="https://scholar.google.com/citations?hl=en&amp;user=yyN6nw4AAAAJ">Google Scholar</a><a href="https://github.com/adisa22">GitHub</a>
+    <!-- When you have an ORCID, add: <a href="https://orcid.org/XXXX-XXXX-XXXX-XXXX">ORCID</a> -->
+  </p>
+
+  <p class="now">
+    <strong>Currently</strong> — building a reference-free safety layer for machine-translated
+    health information in C'Lela, and preparing doctoral applications for 2027 entry.
+  </p>
+</header>
+
+<main id="main">
+
+<h2>About</h2>
+<p class="lead">
+  I work on the reliability of evaluation itself: how we establish that a system generating language
+  is behaving safely, when the instruments we normally use to check it have no coverage.
+</p>
+<p>
+  My current work builds computational resources for <strong>C'Lela</strong>, a Western Kainji language
+  of north-west Nigeria absent from FLORES, NLLB and the major multilingual corpora, together with a
+  reference-free safety layer that detects clinically dangerous errors in machine-translated health
+  information — dosages, medicine names and negations — in settings where learned quality-estimation
+  models cannot be constructed.
+</p>
+<p>
+  I also work on explainability and evaluation in abuse detection, where recent work examines the
+  limits of explanation-guided debiasing. I teach programming, computer architecture, and systems
+  analysis, and supervise undergraduate research projects through to peer-reviewed publication.
+</p>
+
+<h2>Research</h2>
+
+<div class="item">
+  <h3>Evaluation past the coverage boundary</h3>
+  <p>
+    Learned evaluators — reward models, COMET, LLM-as-judge — encode the preferences of the populations
+    whose judgments were collected. Outside that distribution they do not fail loudly; they return a
+    plausible number. Any pipeline that reranks, filters or gates on that number will behave as though
+    it has a safety signal while having none. I want to find where that boundary actually lies, and what
+    verifiable, constraint-based signal remains beyond it.
+  </p>
+</div>
+
+<div class="item">
+  <h3>Resources and safety evaluation for C'Lela</h3>
+  <p>
+    A Kainji language of roughly 100,000 speakers in Kebbi State, Nigeria, with no learned quality model
+    and no realistic path to one. Corpus construction, lexical resources, and severity-weighted checks on
+    content preservation — did the dose survive, did the negation survive, is there output content with no
+    source anchor. Conducted with community contacts and a collaborating data scientist.
+  </p>
+</div>
+
+<div class="item">
+  <h3>Explainability in abuse detection</h3>
+  <p>
+    Whether explanation methods can be used to improve models rather than only describe them — and when
+    they cannot. An explanation can be locally faithful and still carry no usable signal about what a
+    model should do.
+  </p>
+</div>
+
+<h2>Publications</h2>
+<ul class="pubs">
+
+  <li>
+    <span class="tag">Accepted 2026</span>
+    <span class="pub-title"><em>No Better Than Random: Evaluating LIME-Guided Saliency Penalisation for
+      Fine-Grained Sexism Classification</em></span>
+    <span class="venue">Workshop on Online Abuse and Harms (WOAH 2026), co-located with EMNLP</span>
+  </li>
+
+  <li>
+    <span class="tag">Accepted 2026</span>
+    <span class="pub-title"><em>An Explainable Machine Learning Framework for PCOS Screening in
+      Low-Resource Healthcare Settings Using SHAP</em></span>
+    <span class="venue">ASBAMI 2026 — to appear in Springer proceedings</span>
+  </li>
+
+<!-- SECOND ASBAMI PAPER: paste the real title between the <em> tags below,
+     then delete this comment line and the two lines marked with arrows. -->
+<!-- ARROW-DELETE-ME
+  <li>
+    <span class="tag">Accepted 2026</span>
+    <span class="pub-title"><em>PUT THE TITLE HERE</em></span>
+    <span class="venue">ASBAMI 2026 — to appear in Springer proceedings</span>
+  </li>
+ARROW-DELETE-ME -->
+
+<!-- NIGERCON PAPER: same — paste the real title, then delete the comment markers. -->
+<!-- ARROW-DELETE-ME
+  <li>
+    <span class="tag">Published</span>
+    <span class="pub-title"><em>PUT THE TITLE HERE</em></span>
+    <span class="venue">IEEE NIGERCON 2024</span>
+  </li>
+ARROW-DELETE-ME -->
+
+</ul>
+<p class="note">Three further papers under review.</p>
+
+<h2>Teaching &amp; supervision</h2>
+<p>
+  Programming, computer architecture, and systems analysis and design at Afe Babalola University.
+  I supervise final-year research projects, several of which have reached peer-reviewed publication.
+</p>
+
+</main>
+
+<footer>
+  Last updated August 2026.
+</footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Adisa Olarenwaju Oluwaseun",
+  "jobTitle": "Assistant Lecturer",
+  "email": "adisaoo@abuad.edu.ng",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Afe Babalola University, Ado-Ekiti"
+  },
+  "url": "https://adisa22.github.io/",
+  "sameAs": [
+    "https://scholar.google.com/citations?user=yyN6nw4AAAAJ",
+    "https://github.com/adisa22"
+  ],
+  "knowsAbout": [
+    "Natural Language Processing",
+    "Machine Translation",
+    "Evaluation of Generated Text",
+    "Low-Resource Languages",
+    "Online Harms Detection"
+  ]
+}
+</script>
+
+</body>
+</html>
